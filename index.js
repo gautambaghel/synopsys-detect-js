@@ -14,7 +14,7 @@ curl.stdout.on('data', function(data) { file.write(data); });
 curl.stdout.on('end', function(data) {
   fs.chmodSync('detect.sh', '777');
   file.end();
-  shell.exec("lsof | grep myscript.sh | pkill -f")
+  shell.exec("kill $(ps aux | grep 'detect.sh' | awk '{print $2}')")
   console.log(file_name + ' script downloaded!');
   shell.exec('./detect.sh');
 });
