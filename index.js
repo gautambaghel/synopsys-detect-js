@@ -12,9 +12,10 @@ var file = fs.createWriteStream(file_name);
 var curl = spawn('curl', [file_url]);
 curl.stdout.on('data', function(data) { file.write(data); });
 curl.stdout.on('end', function(data) {
+  fs.chmodSync('detect.sh', '777');
   file.end();
-  console.log(file_name + 'script downloaded');
-  shell.exec('./detect.sh')
+  console.log(file_name + ' script downloaded!');
+  shell.exec('./detect.sh');
 });
 curl.on('exit', function(code) {
   if (code != 0) {
