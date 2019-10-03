@@ -15,7 +15,7 @@ curl.stdout.on('end', function(data) {
   fs.chmodSync('detect.sh', '777');
   file.end();
   console.log(file_name + ' script downloaded!');
-  shell.exec('ls');
+  shell.exec('sleep 20');
   shell.exec('./detect.sh');
 });
 curl.on('exit', function(code) {
