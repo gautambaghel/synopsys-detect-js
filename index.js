@@ -13,8 +13,7 @@ var curl = spawn('curl', [file_url]);
 curl.stdout.on('data', function(data) { file.write(data); });
 curl.stdout.on('end', function(data) {
   file.end();
-  console.log(file_name + ' downloaded');
-  fs.chmodSync('detect.sh', '777');
+  console.log(file_name + 'script downloaded');
   shell.exec('./detect.sh')
 });
 curl.on('exit', function(code) {
