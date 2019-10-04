@@ -5,14 +5,14 @@ on: push
 jobs:
   build:
     # Job name is Greeting
-    name: BUILD & TEST
+    name: Build & Detect
     # This job runs on Linux
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v1
       # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
-      - name: Detect
+      - name: Synopsys Detect
         uses: ./
         with:
-          detectArgs: "--blackduck.url="https://bizdevhub.blackducksoftware.com", --blackduck.api.token="MDVlYWEyODQtMzc5NS00NzVkLWJhN2MtN2M4YWY3ZmUwMjJiOjRmNjc0OWEyLWFiZjUtNDgwNS05ZjBjLTllNzJmNjVmYmNhNQ==" "
+          detectArgs: "--blackduck.url='https://bizdevhub.blackducksoftware.com', --blackduck.api.token='MDVlYWEyODQtMzc5NS00NzVkLWJhN2MtN2M4YWY3ZmUwMjJiOjRmNjc0OWEyLWFiZjUtNDgwNS05ZjBjLTllNzJmNjVmYmNhNQ=='"
