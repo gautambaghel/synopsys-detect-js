@@ -13,5 +13,5 @@ if (IS_WINDOWS) {
     shell.exec("wget https://detect.synopsys.com/detect.sh")
     shell.exec("chmod +x detect.sh")
     console.log(`The event payload: ${detectArgs}`)
-    shell.exec("./detect.sh ${{detectArgs}}")
+    shell.exec(`./detect.sh ${detectArgs}`)
 }
