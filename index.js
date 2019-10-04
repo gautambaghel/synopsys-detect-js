@@ -11,5 +11,6 @@ if (IS_WINDOWS) {
     // On everything else do bash
     shell.exec("wget https://detect.synopsys.com/detect.sh")
     shell.exec("chmod +x detect.sh")
-    shell.exec(`./detect.sh ${detectArgs}`)
+    var sandwich = shell.exec(`./detect.sh ${detectArgs}`).code
+    console.log(sandwich)
 }
