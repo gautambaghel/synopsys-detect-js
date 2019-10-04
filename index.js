@@ -12,6 +12,5 @@ if (IS_WINDOWS) {
     // On everything else do bash
     shell.exec("wget https://detect.synopsys.com/detect.sh")
     shell.exec("chmod +x detect.sh")
-    console.log(`The event payload: ${detectArgs}`)
     shell.exec(`./detect.sh ${detectArgs}`)
 }
