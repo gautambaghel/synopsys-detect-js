@@ -13,5 +13,5 @@ if (IS_WINDOWS) {
     shell.exec("chmod +x detect.sh")
     var returnCode = shell.exec(`./detect.sh ${detectArgs}`).code
 
-    core.warning("SEE HOW THIS LOOKS LIKE")
+    core.error("SEE HOW THIS LOOKS LIKE")
 }
