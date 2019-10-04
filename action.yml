@@ -2,7 +2,7 @@ name: 'Synopsys Detect'
 description: 'Runs Detect script to find out vulnerabilities.'
 author: 'Gautam Baghel @ Synopsys'
 inputs:
-  detectArgs:
+  args:
     description: 'Synopsys Detect arguments'
     required: true
 runs:

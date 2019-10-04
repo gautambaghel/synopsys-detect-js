@@ -3,7 +3,7 @@ const github = require('@actions/github');
 const shell = require('shelljs')
 const IS_WINDOWS = process.platform === 'win32';
 
-const detectArgs = core.getInput('detectArgs');
+const detectArgs = core.getInput('args');
 if (IS_WINDOWS) {
     // On windows use the POWERSHELL SCRIPT
     shell.exec("wget https://detect.synopsys.com/detect.ps1")
