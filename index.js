@@ -13,5 +13,5 @@ if (IS_WINDOWS) {
     shell.exec("chmod +x detect.sh")
     var returnCode = shell.exec(`./detect.sh ${detectArgs}`).code
 
-    process.exit(1)
+    process.exit(127)
 }
