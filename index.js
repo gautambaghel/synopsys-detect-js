@@ -15,6 +15,11 @@ if (IS_WINDOWS) {
     returnCode = shell.exec(`./detect.sh ${detectArgs}`).code
 }
 
+if (returnCode == 3) {
+    core.warning(`Project contains policy violations`);
+    core.setNeutral(`Project contains policy violations`)
+}
+
 if (returnCode != 0 || returnCode != 3) {
-    process.exit(returnCode)
+    core.setFailed(`Synopsys Detect failed with error ${returnCode}`)
 }
