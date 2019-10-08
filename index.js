@@ -21,5 +21,5 @@ if (returnCode == 3) {
 }
 
 if (returnCode != 0 || returnCode != 3) {
-    core.setFailed(`Synopsys Detect failed with error ${returnCode}`)
+    core.setNeutral(`Synopsys Detect failed with error ${returnCode}`)
 }
