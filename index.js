@@ -16,10 +16,12 @@ if (IS_WINDOWS) {
 }
 
 if (returnCode == 3) {
-    core.warning(`Project contains policy violations`);
-    core.setNeutral(`Project contains policy violations`)
+    core.warning(`Project contains policy violations`)
+    return
+    // will be added in @actions/core v2
+    // core.setNeutral(`Project contains policy violations`)
 }
 
-if (returnCode != 0 || returnCode != 3) {
-    core.setNeutral(`Synopsys Detect failed with error ${returnCode}`)
+if (returnCode != 0) {
+    core.setFailed(`Synopsys Detect failed with error ${returnCode}`)
 }
