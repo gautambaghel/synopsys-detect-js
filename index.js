@@ -3,19 +3,19 @@ const github = require('@actions/github')
 const exec = require('@actions/exec')
 const IS_WINDOWS = process.platform === 'win32'
 
-let myOutput = ''
-let myError = ''
+let myOutput = '';
+let myError = '';
 
-const options = {}
+const options = {};
 options.listeners = {
   stdout: (data: Buffer) => {
-    myOutput += data.toString()
+    myOutput += data.toString();
   },
   stderr: (data: Buffer) => {
-    myError += data.toString()
+    myError += data.toString();
   }
-}
-options.cwd = './lib'
+};
+options.cwd = './lib';
 
 const detectArgs = core.getInput('args')
 var returnCode = 0
