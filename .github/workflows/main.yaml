@@ -1,7 +1,7 @@
-name: Action Self Check
+name: Detect action self check
 on: push
 jobs:
-  build
+  build:
     name: Build & Detect
     runs-on: ${{ matrix.os }}
     strategy:
